@@ -1,0 +1,250 @@
+{%extends 'base.html' %}
+{% load static %}
+
+{% block content%}
+<section class="home" id="home">
+    <div class="row">
+        <div class="content">
+            <h3>BookStore</h3>
+            <p>For All Your Reading Needs</p>
+            <p>“Reality doesnt always give us the life that we desire, but we can always find what we desire between the pages of books.”</p>
+            <a href="" class="btn">Read More</a>
+        </div>
+        <div class="books-list" >
+            <divs>
+                <a href="" ><img src=" {%static 'image/bookstore.jpg'%}" alt=""></a>
+            </div>   
+        </div>
+    </div>
+</section>
+<hr>
+
+<!--services-->
+<section>
+    <div class="services">
+        <div class="services-box">
+            <div class="services-card">
+                <i class="fa fa-id-card" aria-hidden="true"></i>
+                <h3>Fast Delivery</h3>
+                <p>Efficiency at your doorstep</p>
+            </div>
+            <div class="services-card">
+                <i class="fa fa-headphones" aria-hidden="true"></i>
+                <h3>24/7 Services</h3>
+                <p>Call Us anytime</p>
+            </div>
+            <div class="services-card">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <h3>Best deal</h3>
+                <p>Get Best Offers</p>
+            </div>
+            <div class="services-card">
+                <i class="fa fa-lock" aria-hidden="true"></i>
+                <h3>Privacy</h3>
+                <p>Be Frank to search</p>
+            </div>
+        </div>
+    </div>
+</section>
+<hr>
+
+
+
+<section id="featured">
+    <h1 class="heading"><span>Featured Books</span></h1>
+    
+    <div class="featured-books" >
+        
+        <div class="swiper featured-book-box">
+            {% for book in book %}
+            <div class="featured-books">
+                <div class="featured-book-card">
+                    <div class="featured-book-img">
+                        <img src="{{ book.image.url }} " alt="">
+                    </div>
+                <div class="featured-book-tag">
+                    <h2 class="writer">John Deo</h2>
+                    <p class="categories">{{book.name}}</p>
+                    <p class="bbok-price">${{book.price}}</p>
+                    <a href="#" class="f-btn">Add to Cart</a>
+                </div>
+            </div>
+            
+            
+        </div>
+        {% endfor %}
+    </div>
+    
+</section>
+
+<section class="arrivals" id="arrivals">
+    <h1 class="heading"><span>New Arrivals</span></h1>
+    <div class="arrivals" id="arrivals">
+        <div class="arrivals-box">
+            <div class="arrivals-4card">
+                {% for book in book %}
+                <div class="arrivals-card">
+                    <div class="arrivals-image">
+                        <img src="{{ book.image.url  }}" alt="">
+                    </div>
+                    <div class="arrivals-tag">
+                        <p>New Arrivals</p>
+                        <div class="arrivals-icon">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                        </div>
+                        <a href="" class="arrivals_btn">Add to Cart</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+           
+<!--blogs-->
+<section id="blogs">
+    <h1 class="heading"><span>Our Blog</span></h1>
+    <div class="blog" >
+        <div class="blog-box">
+            <div class="blog-card">
+                <div class="blog-img">
+                    <img src="{%static 'image/blog-1.jpg'%}" alt="">
+                </div>
+                <div class="blog-tag">
+                    <h2>Blogger</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque, necessitatibus!</p>
+                    <div class="blog-icon">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="blog-card">
+                <div class="blog-img">
+                    <img src="{%static 'image/blog-2.jpg' %}" alt="">
+                </div>
+                <div class="blog-tag">
+                    <h2>Blogger</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque, necessitatibus!</p>
+                    <div class="blog-icon">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>  
+    
+            <div class="blog-card">
+                <div class="blog-img">
+                    <img src="{%static 'image/blog-3.jpg' %}" alt="">
+                </div>
+                <div class="blog-tag">
+                    <h2>Blogger</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque, necessitatibus!</p>
+                    <div class="blog-icon">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+    </section>
+    <hr>
+    
+    <section class="newsletter">
+    
+    <form action="">
+    
+        <h3>subcribe for latest update</h3>
+        <input type="email" name="" placeholder="enter your email" class="box">
+        <input type="submit" value="subcribe" class="btn">
+    </form>
+    </section>
+    <hr>
+    <!--Reviews-->
+    <section class="reviews" id="reviews">
+    
+    <h1 class="heading"><span>client's reviews</span></h1>
+    
+    <div class="reviews-box">
+        <div class="reviews-card">
+            <div>
+                <div class=" box">
+                    <img src="{%static '/image/pic-1.png' %}" alt="">
+                    <h3>john deo</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque eligendi amet recusandae perferendis cumque nesciunt.
+                    </p>
+    
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                 </div>
+    
+                 <div class="box">
+                    <img src="{%static '/image/pic-2.png' %}" alt="">
+                    <h3>john deo</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque eligendi amet recusandae perferendis cumque nesciunt.
+                    </p>
+    
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                 </div>
+            </div>
+             
+            <div>
+                <div class="box">
+                    <img src="{%static '/image/pic-3.png' %}" alt="">
+                    <h3>john deo</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque eligendi amet recusandae perferendis cumque nesciunt.
+                    </p>
+    
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                 </div>
+    
+                 <div class="box">
+                    <img src="{%static '/image/pic-4.png'%}" alt="">
+                    <h3>john deo</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque eligendi amet recusandae perferendis cumque nesciunt.
+                    </p>
+    
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                 </div>    
+            </div>
+             
+        </div>
+    </div>
+    </section>
+    <hr>
+    
+
+{%endblock%}
